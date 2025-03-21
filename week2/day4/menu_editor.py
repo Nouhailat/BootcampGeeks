@@ -68,7 +68,53 @@ def show_menu():
         print("no items in menu")
 if __name__ == "__main__":
     show_user_menu()
-        
+    
+# ********************** Nooow other fun ****************
+def add_item_toMenu():
+    name = input("Enter the name of the item: ")
+    price = input("Enter the price of the item: ")
+    if not price.isdigit():
+        print("Invalid price. Please enter a number.")
+        return
+    item=Menu_items(name,int(price))
+    item.save()
+    print(f"{name} item added to menu")
+def remove_itemFrom_Menu():
+    name=input("put name of item:").strip()
+    item=Menu_items.get_menu(name)
+    if item:
+        item.delete()
+        print(f"item'{name}' has been deleted")
+    else:
+        print(f"item not found")
+def update_item_fromMenu():
+    name=input("put name of item:").strip()
+    item=Menu_items.get_menu(name)
+    if item:
+        new_name=input("put the new name(press enter to keep same):").strip()
+        item=MenuManager.get_menu(name)
+        if item:
+            new_name=input("entrer the name of item to update:")
+            new_price=input("enter price or not write anything for not change the price exist")
+            if new_price and not new_price.isdigit():
+                print("Invalid price. Please enter a number.")
+                return
+            item.update(new_name or None,int(new_price))
+            print(f"{name} item updated")
+        else:
+             print("item not found")
+def show_menu():
+    Menu_items=MenuManager.all_items()
+    if Menu_items:
+        for item in MenuManager.all_items():
+            print(f"{item.name} 'costs',{item.price}")
+        else:
+          print("the menu is viiide")  
+    
+    
+            
+    
+    
         
     
     
