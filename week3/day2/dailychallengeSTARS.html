@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Frame</title>
+</head>
+<body>
+    <input type="text" id="wordInput" placeholder="Enter words separated by commas">
+    <button onclick="generateFrame()">Generate Frame</button>
+    <pre id="output"></pre>
+
+    <script>
+        function generateFrame() {
+            let userInput = document.getElementById("wordInput").value;
+            let words = userInput.split(",").map(word => word.trim());
+
+            let maxLength = Math.max(...words.map(word => word.length));
+            let border = "*".repeat(maxLength + 4);
+            let frame = border + "\n";
+
+            words.forEach(word => {
+                frame += `* ${word.padEnd(maxLength)} *\n`;
+            });
+
+            frame += border;
+            document.getElementById("output").textContent = frame;
+        }
+    </script>
+</body>
+</html>
