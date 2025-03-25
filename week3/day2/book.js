@@ -2,7 +2,7 @@ const allBooks = [
     {
         title: "The Great Gatsby",
         author: "F. Scott Fitzgerald",
-        image: "https://th.bing.com/th/id/OIP.2DmsuyWpvFnCgQTZc85NDQHaIv?rs=1&pid=ImgDetMain"
+        image: "https://th.bing.com/th/id/OIP.2DmsuyWpvFnCgQTZc85NDQHaIv?rs=1&pid=ImgDetMain",
         alreadyRead: true
     },
     {
