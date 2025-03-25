@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    function hotelCost() {
+        
+        let nights;
+        do{
+            nights = parseInt(prompt("How many days do you want to stay in the hotel?"));
+        
+        }
+        while (nights <= 0)
+            return nights*140;
+            
+        
+            
+        }
+        console.log("the cost of the hotel is",hotelCost());
+        
+   </script>
+</body>
+</html>

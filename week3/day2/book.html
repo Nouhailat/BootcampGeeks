@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        .listBooks {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .book {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .book img {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .book.read {
+            background-color: #d4edda; /* Vert clair pour les livres lus */
+        }
+    </style>
+</head>
+<body>
+
+    <section class="listBooks"></section>
+
+    <script src="book.js"></script>
+
+</body>
+</html>
