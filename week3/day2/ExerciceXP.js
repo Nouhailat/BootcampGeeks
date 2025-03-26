@@ -13,7 +13,7 @@ if (colors.includes("Violet")) {
 const colors2 = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 const ordinal = ["th","st","nd","rd"];
 colors2.forEach((c,i) => {
-    let position=index+1
+    let position=i+1
     let suffix=(position===1)?"st":(position===2)?"nd":(position===3)?"rd":"th";
     console.log(`${position}. ${c} ${suffix}`);
   
@@ -47,5 +47,5 @@ const students = [{name: "Ray", course: "Computer Science", isPassed: true},
     {name: "Marco", course: "Robotics", isPassed: true}, 
     {name: "Kimberly", course: "Artificial Intelligence", isPassed: false}, 
     {name: "Jamie", course: "Big Data", isPassed: false}];
-const STUDENT_PASSED_c=filter(student=> student.isPassed )
+const STUDENT_PASSED_c=students.filter((student=> student.isPassed ))
 console.log(STUDENT_PASSED_c);
