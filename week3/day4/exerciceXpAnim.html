@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        p {
+          background: yellow;
+          color: red;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <button id="clear">Clear Interval</button>
+    </body>
+    <script>
+        setTimeout(function(){
+            alert("hello world ")
+        } ,2000)
+         setTimeout( function(){
+            let NewPrag=document.createElement("p")
+            NewPrag.textContent="Hello World"
+
+        document.getElementById("container").appendChild(NewPrag)
+
+
+         },2000)
+          let intervalId=setInterval(function(){
+            let NewPrag=document.createElement("p")
+            NewPrag.textContent="Hello World"
+           container.appendChild(NewPrag)
+            if(container.querySelectorAll("p").length >=5){
+                clearInterval(intervalId)
+                console.log("interval stoped ")
+            }
+            },2000)
+         
+
+
+
+
+
+
+
+
+
+
+    </script>
+    </html>
