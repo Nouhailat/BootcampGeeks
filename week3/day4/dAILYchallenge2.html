@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Type only letters</h2>
+    <input type="text" id="letterInput" placeholder="Entter heere...">
+    
+    <script>
+       const input =document.getElementById('letterInput')
+       input.addEventListener('input', function(){
+    this.value=this.value.replace(/[^a-zA-Z]/g, '')
+        })
+    </script>
+</body>
+</html>
