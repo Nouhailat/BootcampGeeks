@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.palette {
+    margin: 20px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 5px;
+    display: inline-block;
+}
+
+.grid {
+    flex: 1; /* prend tout l'espace restant */
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+}
+
+.square {
+    background: white;
+    border: 0.5px solid #eee; /* léger pour voir les cases */
+}
