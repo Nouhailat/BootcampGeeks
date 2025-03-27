@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fade { animation: fadeOut 1s forwards; }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <article id="article">
+        <h1 id="h1"> Some Facts </h1>
+        <h2 onclick="changebg()"> The Chocolate </h2>
+        <h3 onclick="hideTitle()"> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+    <button  id="Boldbutton" >click to change font size</button>
+    </article>
+  
+    <script>
+         let theH1=document.getElementById("h1")
+         console.log(theH1)
+        
+document.querySelectorAll("article p")[3].remove();
+
+function changebg(){
+    document.querySelector('h2').body.style.background="red";
+}
+function hideTitle() {
+    document.querySelector('h3').style.display = "none";
+}
+<!-- document.querySelector('h3').addEventListener('click', hideTitle); -->
+document.getElementById("Boldbutton").addEventListener("click",()=> {
+document.querySelectorAll("article p").forEach(p=> p.style.fontWeight="bold")
+
+})
+document.querySelectorAll('article p')[1].addEventListener('mouseover', () => {
+    document.querySelectorAll('article p')[1].classList.add('fade');
+});
+document.querySelector('#h1').addEventListener('mouseover', () => {
+    document.querySelector('#h1').style.fontSize = `${Math.floor(Math.random() * 101)}px`;
+});
+
+
+        
+
+    </script>
+</body>
+</html>
