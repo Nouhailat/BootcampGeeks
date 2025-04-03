@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>juice bar part one and two</h2>
+    <script>
+        function makeJUS(size) {
+            const ingredients=[]
+            function ingredientsF(ing1,ing2,ing3) {
+                ingredients.push(ing1,ing2,ing3)
+                
+                
+            }
+            function displayJus() {
+                const message = `The client wants a ${size} drink juice, containing ${ingredients[0]}, ${ingredients[1]}, ${ingredients[2]}, ${ingredients[3]}, ${ingredients[4]}, ${ingredients[5]}.`;
+        document.body.innerHTML += `<p>${message}</p>`;
+                
+            }
+            ingredientsF('orange','blueberry','kiwi')
+            ingredientsF('apple', 'banana', 'pineapple'); 
+            displayJus()
+            
+        }
+        makeJUS('medium')
+    </script>
+    
+</body>
+</html>
