@@ -1,0 +1,142 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f3f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Main Container */
+  .container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  
+  input[type="text"] {
+    width: 70%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #007BFF;
+  }
+  
+  button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Task List Styles */
+  .listTasks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .task-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+  }
+  
+  .task-item:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .task-item label {
+    font-size: 18px;
+    font-weight: 400;
+    flex-grow: 1;
+    transition: text-decoration 0.3s ease;
+  }
+  
+  .task-item label.completed {
+    text-decoration: line-through;
+    color: red;
+  }
+  
+  .task-item .delete-btn {
+    font-size: 20px;
+    color: #ff4d4d;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .task-item .delete-btn:hover {
+    color: #e60000;
+  }
+  
+  .task-item.completed {
+    background-color: #ffefef;
+    border-color: #ffcccc;
+  }
+  
+  /* Responsive Design for smaller screens */
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    form {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    input[type="text"] {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
