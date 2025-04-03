@@ -41,6 +41,13 @@ console.log(welcomeStudents);
 const fullStack_Res=users.filter(user=>user.role=="Full Stack Resident")
 console.log(fullStack_Res);
 // exercice 5
+const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+const sentence = epic.reduce((acc, currentValue) => {
+  return acc + ' ' + currentValue;
+});
+
+console.log(sentence);  
+// exercice6
 const students = [{name: "Ray", course: "Computer Science", isPassed: true}, 
     {name: "Liam", course: "Computer Science", isPassed: false}, 
     {name: "Jenner", course: "Information Technology", isPassed: true}, 
