@@ -20,7 +20,7 @@ function displayRobots(filteredRobots) {
         const card = document.createElement('div');
         card.classList.add('robot-card');
         card.innerHTML = `
-            <img src="${robot.image}" alt="${robot.name}">
+            <img src="${robot.image}">
             <h3>${robot.name}</h3>
             <p>${robot.username}</p>
             <p>${robot.email}</p>
