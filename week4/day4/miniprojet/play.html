@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="play.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Random Quote </h1>
+        </header>
+
+        <form id="quoteForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="quote">Your Quote:</label>
+            <textarea id="quote" name="quote" placeholder="Enter your quote" required></textarea>
+
+            <button type="submit">Generate Quote</button>
+        </form>
+        <form id="filterForm">
+            <label for="filterAuthor">Filter by Author:</label>
+            <input type="text" id="filterAuthor" name="filterAuthor" placeholder="Enter author name">
+            <button type="submit">Filter</button>
+        </form>
+
+        <div id="output" style="display:none;">
+            <p id="quoteOutput"></p>
+            <p id="authorOutput"></p>
+            <div id="navigation">
+                <button id="prevButton" disabled>Previous</button>
+                <button id="nextButton" disabled>Next</button>
+            </div>
+
+            <button id="charCountWithSpaces">Number of characters (with spaces)</button>
+            <button id="charCountWithoutSpaces">Number of characters (without spaces)</button>
+            <button id="wordCount">Number of words</button>
+            <button id="likeButton">Like</button>
+            <p id="likeCount">Likes: 0</p>
+        </div>
+    </div>
+
+    <script src="play.js" ></script>
+    
+</body>
+</html>
