@@ -1,0 +1,111 @@
+/* 🌌 Style global */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔍 Style du champ de recherche */
+#search {
+    width: 50%;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #38bdf8;
+    border-radius: 30px;
+    outline: none;
+    margin: 20px auto;
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+#search:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #e879f9;
+}
+
+/* 🏠 Conteneur des robots */
+#robots-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* 🤖 Carte des robots */
+.robot-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 230px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.robot-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+/* 🌟 Animation néon */
+.robot-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.15), transparent);
+    transition: 0.5s ease;
+}
+
+.robot-card:hover::before {
+    top: 0;
+    left: 0;
+}
+
+/* 🖼️ Image des robots */
+.robot-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #38bdf8;
+    transition: 0.3s ease;
+}
+
+.robot-card:hover img {
+    border-color: #e879f9;
+}
+
+/* 🎨 Nom du robot */
+.robot-card h3 {
+    margin: 15px 0 5px;
+    font-size: 18px;
+    color: #38bdf8;
+}
+
+/* 📨 Email et username */
+.robot-card p {
+    font-size: 14px;
+    margin: 2px 0;
+    color: #94a3b8;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    #search {
+        width: 80%;
+    }
+    .robot-card {
+        width: 180px;
+    }
+}
