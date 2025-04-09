@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Convertisseur MAD ⇄ YER</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://res.cloudinary.com/teepublic/image/private/s--DomvCDuZ--/c_crop,x_10,y_10/c_fit,h_830/c_crop,g_north_west,h_1038,w_1038,x_-199,y_-104/l_upload:v1565806151:production:blanks:vdbwo35fw6qtflw9kezw/fl_layer_apply,g_north_west,x_-310,y_-215/b_rgb:ffffff/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1705560668/production/designs/56680532_1.jpg') no-repeat center center fixed; /* Add Watermelon Background */
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for better readability */
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 320px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    #result {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #006400;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-bottom: 2px solid #006400;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+   
+    button {
+      cursor: pointer;
+      background-color: #006400;
+      color: white;
+      border: none;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #004d00; 
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>free palestine</h1>
+    <h2>Convertisseur MAD ⇄ YER 🇲🇦⇄🇾🇪</h2>
+  
+    <input type="number" id="amount" value="1" min="0" placeholder="Montant" />
+    
+    <label>De :</label>
+    <select id="fromCurrency">
+      <option value="MAD">Dirham Marocain (MAD)</option>
+      <option value="YER">Riyal Yéménite (YER)</option>
+    </select>
+
+    <button id="switchBtn">⇆ Switch</button>
+
+    <label>À :</label>
+    <select id="toCurrency">
+      <option value="YER">Riyal Yéménite (YER)</option>
+      <option value="MAD">Dirham Marocain (MAD)</option>
+    </select>
+
+    <button id="convertBtn">Convertir</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const API_KEY = "8565bed9b9d61556991f3fde"; 
+    const BASE_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}`;
+
+    const amountInput = document.getElementById("amount");
+    const fromSelect = document.getElementById("fromCurrency");
+    const toSelect = document.getElementById("toCurrency");
+    const resultDisplay = document.getElementById("result");
+    const convertBtn = document.getElementById("convertBtn");
+    const switchBtn = document.getElementById("switchBtn");
+
+    async function convertCurrency() {
+      const from = fromSelect.value;
+      const to = toSelect.value;
+      const amount = amountInput.value;
+
+      const res = await fetch(`${BASE_URL}/pair/${from}/${to}/${amount}`);
+      const data = await res.json();
+
+      if (data.result === "success") {
+        resultDisplay.textContent = `${amount} ${from} = ${data.conversion_result.toFixed(2)} ${to}`;
+      } else {
+        resultDisplay.textContent = "Erreur de conversion.";
+      }
+    }
+
+    switchBtn.addEventListener("click", () => {
+      const temp = fromSelect.value;
+      fromSelect.value = toSelect.value;
+      toSelect.value = temp;
+      convertCurrency();
+    });
+
+    convertBtn.addEventListener("click", convertCurrency);
+  </script>
+</body>
+</html>
