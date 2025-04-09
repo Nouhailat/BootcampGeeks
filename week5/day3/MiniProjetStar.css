@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000;
+    color: #ffe81f;
+    padding: 2rem;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ffe81f;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  #characterInfo {
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  #loading {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #errorMsg {
+    color: red;
+    margin-top: 20px;
+  }
+  
