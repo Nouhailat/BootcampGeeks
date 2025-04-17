@@ -1,0 +1,129 @@
+/* ===== Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #121212;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ===== Wrapper & Animation ===== */
+.glass-wrapper {
+  width: 100%;
+  max-width: 380px;
+  margin: auto;
+  padding: 20px;
+  animation: slideUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+/* ===== Glassmorphic Card ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 40px 30px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 2px rgba(255, 255, 255, 0.1);
+  color: #eee;
+  text-align: center;
+}
+
+/* ===== Titre ===== */
+.glass-card h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+}
+
+/* ===== Champs ===== */
+.field {
+  margin-bottom: 20px;
+  position: relative;
+}
+.field input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 12px;
+  color: #f0f0f0;
+  font-size: 15px;
+  transition: background 0.3s ease;
+  box-shadow: 
+    inset 2px 2px 5px rgba(0,0,0,0.3),
+    inset -2px -2px 5px rgba(255,255,255,0.1);
+}
+.field input::placeholder {
+  color: #ccc;
+}
+.field input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 2px 2px 8px rgba(0,0,0,0.5),
+    inset -2px -2px 8px rgba(255,255,255,0.2);
+}
+
+/* ===== Bouton ===== */
+button {
+  width: 100%;
+  padding: 14px 0;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 15px rgba(238,9,121,0.4);
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(238,9,121,0.6);
+}
+
+/* ===== Message d’erreur ===== */
+.error {
+  margin-bottom: 15px;
+  color: #ff4d4f;
+  font-size: 14px;
+}
+
+/* ===== Lien ===== */
+.link {
+  margin-top: 18px;
+  font-size: 14px;
+}
+.link a {
+  color: #ff6a00;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.link a:hover {
+  color: #ee0979;
+}
