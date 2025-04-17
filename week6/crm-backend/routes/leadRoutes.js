@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', getAllLeads);
 router.get('/:id', getLeadById);
-router.post('/leads', createLead);
+router.post('/', createLead);
 router.put('/:id', updateLead);
 router.delete('/:id', deleteLead);
 

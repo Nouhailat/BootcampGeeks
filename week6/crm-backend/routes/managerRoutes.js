@@ -1,31 +1,31 @@
 import express from 'express';
-import { protect } from '../middleware/authMiddleware.js';
+import { authMiddleware } from '../middleware/authMiddleware.js';
 import { restrictTo } from '../middleware/roleMiddleware.js';
 import { createManager, updateManager, deleteManager, getAllManagers} from '../controllers/managerController.js';
 
 const router = express.Router();
 router.post(
   '/managers',
-  protect,
+  authMiddleware,
   restrictTo('employer'),
   createManager
 );
 
 router.get(
   '/managers',
-  protect,
+  authMiddleware,
   restrictTo('employer'),
   getAllManagers
 );
 router.put(
   '/managers/:id',
-  protect,
+  authMiddleware,
   restrictTo('employer'),
   updateManager
 );
 router.delete(
   '/managers/:id',
-  protect,
+  authMiddleware,
   restrictTo('employer'),
   deleteManager
 );
