@@ -8,9 +8,8 @@ export const restrictTo = (...roles) => {
   };
   export const checkRole = (requiredRole) => {
     return (req, res, next) => {
-      // Supposons que le rôle de l'utilisateur est stocké dans req.user.role
       if (req.user && req.user.role === requiredRole) {
-        return next(); // Si le rôle correspond, on passe à la prochaine étape
+        return next(); 
       } else {
         return res.status(403).json({ message: "Access forbidden: insufficient permissions" });
       }
