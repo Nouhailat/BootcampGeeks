@@ -1,66 +1,62 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import './LoginGlass.css';
 
-export default function Login() {
-  const [email, setEmail] = useState('');       
-  const [password, setPassword] = useState(''); 
-  const [error, setError] = useState('');       
-  const navigate = useNavigate();               
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
- 
   const handleLogin = async (e) => {
-    e.preventDefault();   
-    setError('');           
+    e.preventDefault();
+    setError('');
 
     try {
-
-      const response = await axios.post(
-        'http://localhost:5000/api/auth/login',
-        { email, password }
+      const res = await axios.post(
+        'http://localhost:5000/api/login', // ⚠️ Assure-toi que cette route est correcte côté backend
+        { email, password },
+        { withCredentials: true }
       );
 
-      
-      const token = response.data.token;
-      localStorage.setItem('token', token);
-      navigate('/employer/dashboard');  
-
+      console.log('Login success:', res.data);
+      navigate('/employer/dashboard'); // ✅ Redirection après login
     } catch (err) {
- 
-      const msg = err.response?.data?.message || 'Erreur de connexion';
-      setError(msg);
+      console.error(err);
+      setError(err.response?.data?.message || 'Erreur lors de la connexion');
     }
   };
 
   return (
-    <div className="glass-wrapper">
-      <form className="glass-card" onSubmit={handleLogin}>
-        <h2>Connexion</h2>
-        {error && <div className="error">{error}</div>}
-        <div className="field">
-          <input
-            type="email"
-            placeholder="Votre email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="field">
-          <input
-            type="password"
-            placeholder="Votre mot de passe"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Se connecter</button>
-        {/* <p className="link">
-          Pas de compte ? <a href="#">Inscrivez‑vous</a>
-        </p> */}
+    <div style={{ padding: '40px', maxWidth: '400px', margin: '0 auto' }}>
+      <h2>Connexion</h2>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
+        />
+        <input
+          type="password"
+          placeholder="Mot de passe"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
+        />
+        <button
+          type="submit"
+          style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: 'white', border: 'none' }}
+        >
+          Se connecter
+        </button>
       </form>
+      {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
     </div>
   );
 }
+
+export default Login;

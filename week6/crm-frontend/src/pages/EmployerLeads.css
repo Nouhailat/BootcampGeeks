@@ -1,0 +1,46 @@
+.leads-container {
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+.lead-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.lead-form input,
+.lead-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 160px;
+}
+.lead-form button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.leads-table th,
+.leads-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.leads-table th {
+  background-color: #f4f6f8;
+}
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f6fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-container {
+  padding: 40px 60px;
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: flex-start;
+}
+
+.card {
+  flex: 1 1 250px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.card p {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Individual card accents */
+.card-progress {
+  border-top: 5px solid #f39c12;
+}
+
+.card-completed {
+  border-top: 5px solid #27ae60;
+}
+
+.card-canceled {
+  border-top: 5px solid #e74c3c;
+}

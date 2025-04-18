@@ -1,0 +1,18 @@
+.mgr-leads-container {
+    padding: 30px;
+    font-family: Arial, sans-serif;
+  }
+  .mgr-leads-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .mgr-leads-table th,
+  .mgr-leads-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .mgr-leads-table th {
+    background-color: #f4f6f8;
+  }
+  

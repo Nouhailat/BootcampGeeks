@@ -19,6 +19,7 @@ function App() {
   }, []);
 
   return <AppRouter user={user} />;
+  
 }
 
 export default App;
