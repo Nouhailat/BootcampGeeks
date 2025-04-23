@@ -1,0 +1,26 @@
+[
+  {
+    "id": "a0127fa9-4172-4db4-beb0-5f315554488f",
+    "name": "Zakaria",
+    "lastName": "Rebibi",
+    "email": "zakaria@example.com",
+    "username": "zakariaDev",
+    "password": "$2b$10$A041lX2N4ROVPZdcN37fhebcB.eF1KuL3cWgWOjCeg2KcnUpy.FnK"
+  },
+  {
+    "id": "73cf85de-9811-4f1a-94f5-9c1a3c47af37",
+    "name": "Nouhaila",
+    "lastName": "Touati",
+    "email": "nouhaila.ribery@gmail.com",
+    "username": "Nouha",
+    "password": "$2b$10$/5lHmrCdS4pmSvp9mgE6/.OFvC7j/JaIW15iYSSFa1q1ccw5OrTTS"
+  },
+  {
+    "id": "c5194634-cf3e-4d95-a293-a0900e846137",
+    "name": "ana nouha",
+    "lastName": "touta",
+    "email": "nouha1@gmail.com",
+    "username": "Nouha12",
+    "password": "$2b$10$qWhaUkOF98w7vr54/lgDIOEqxQVehde0WVLdv/.01YxoNotutZdSS"
+  }
+]

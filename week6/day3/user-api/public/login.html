@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+</head>
+<body>
+  <h2>Login Form</h2>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button type="submit" disabled>Login</button>
+  </form>
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const button = form.querySelector('button');
+    const message = document.getElementById('message');
+
+    form.addEventListener('input', () => {
+      button.disabled = !(username.value.trim() && password.value.trim());
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: username.value.trim(),
+          password: password.value.trim()
+        })
+      });
+
+      const data = await res.json();
+      if (data.message === 'login') {
+        message.textContent = '✅ Login réussi';
+      } else if (data.message === 'error2') {
+        message.textContent = '❌ Mauvais identifiants';
+      } else {
+        message.textContent = '⚠️ Erreur inconnue';
+      }
+    });
+  </script>
+</body>
+</html>
