@@ -16,7 +16,7 @@ const ShopScreen = () => {
 function App() {
   return (
     <BrowserRouter>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" fixed="top">
         <Container>
           <Navbar.Brand>My App</Navbar.Brand>
           <Nav className="me-auto">
